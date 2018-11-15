@@ -1,0 +1,10 @@
+Recursively Remove .DS_Store:
+find . -name '.DS_Store' -type f -delete
+
+Docker images build:
+#!/bin/bash
+for path in $(ls | grep 'uisg');
+do
+echo $path" is building";
+docker build -t $path -f $path/Dockerfile $path
+done
